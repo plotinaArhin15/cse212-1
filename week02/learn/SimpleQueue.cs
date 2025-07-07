@@ -1,4 +1,4 @@
-﻿public class SimpleQueue
+public class SimpleQueue
 {
     public static void Run()
     {

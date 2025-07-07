@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 public static class Divisors
 {
     /// <summary>
@@ -5,6 +6,13 @@ public static class Divisors
     /// </summary>
     public static void Run()
     {
+=======
+public static class Divisors {
+    /// <summary>
+    /// Entry point for the Divisors class
+    /// </summary>
+    public static void Run() {
+>>>>>>> b16ee35c239bbe20106348c5095d53a359f3b936
         List<int> list = FindDivisors(80);
         Console.WriteLine("<List>{" + string.Join(", ", list) + "}"); // <List>{1, 2, 4, 5, 8, 10, 16, 20, 40}
         List<int> list1 = FindDivisors(79);
@@ -18,6 +26,7 @@ public static class Divisors
     /// </summary>
     /// <param name="number">The number to find the divisor</param>
     /// <returns>List of divisors</returns>
+<<<<<<< HEAD
     public static List<int> FindDivisors(int number)
     {
         List<int> divisors = new List<int>();
@@ -29,5 +38,11 @@ public static class Divisors
             }
         }
         return divisors;
+=======
+    private static List<int> FindDivisors(int number) {
+        List<int> results = new();
+        // TODO problem 1
+        return results;
+>>>>>>> b16ee35c239bbe20106348c5095d53a359f3b936
     }
 }

@@ -6,6 +6,7 @@ public static class Arrays
     /// integer greater than 0.
     /// </summary>
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
+<<<<<<< HEAD
     public static double[] MultiplesOf(double start, int count)
     {
         // Plan for MultiplesOf function:
@@ -21,6 +22,16 @@ public static class Arrays
         }
 
         return result;
+=======
+    public static double[] MultiplesOf(double number, int length)
+    {
+        // TODO Problem 1 Start
+        // Remember: Using comments in your program, write down your process for solving this problem
+        // step by step before you write the code. The plan should be clear enough that it could
+        // be implemented by another person.
+
+        return []; // replace this return statement with your own
+>>>>>>> b16ee35c239bbe20106348c5095d53a359f3b936
     }
 
     /// <summary>
@@ -32,6 +43,7 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
+<<<<<<< HEAD
         // Plan for RotateListRight function:
         // 1. Find the index where the rotation should start: this is data.Count - amount.
         // 2. Use GetRange to get the sublist from that index to the end (these will move to the front).
@@ -48,5 +60,11 @@ public static class Arrays
         data.Clear();
         data.AddRange(frontPart);
         data.AddRange(backPart);
+=======
+        // TODO Problem 2 Start
+        // Remember: Using comments in your program, write down your process for solving this problem
+        // step by step before you write the code. The plan should be clear enough that it could
+        // be implemented by another person.
+>>>>>>> b16ee35c239bbe20106348c5095d53a359f3b936
     }
 }
