@@ -1,14 +1,27 @@
 public class Translator
 {
+    /// <summary>
+    /// Demonstrate the basic functionality of the Translator class.
+    /// </summary>
     public static void Run()
     {
+        // Create a Translator object
         var englishToGerman = new Translator();
+
+        // Add a few words to the translator:
+        //  - House translates to Haus
+        //  - Car translates to Auto
+        //  - Plane translates to Flugzeug
         englishToGerman.AddWord("House", "Haus");
         englishToGerman.AddWord("Car", "Auto");
         englishToGerman.AddWord("Plane", "Flugzeug");
-        Console.WriteLine(englishToGerman.Translate("Car")); // Auto
-        Console.WriteLine(englishToGerman.Translate("Plane")); // Flugzeug
-        Console.WriteLine(englishToGerman.Translate("Train")); // ???
+
+        // Show that it works:
+        Console.WriteLine(englishToGerman.Translate("Car")); // Should print "Auto"
+        Console.WriteLine(englishToGerman.Translate("Plane")); // Should print "Flugzeug"
+
+        // Show that it will return "???" if there's no translation available:
+        Console.WriteLine(englishToGerman.Translate("Train")); // Should print "???"
     }
 
     private Dictionary<string, string> _words = new();
@@ -21,10 +34,9 @@ public class Translator
     /// </summary>
     /// <param name="fromWord">The word to translate from</param>
     /// <param name="toWord">The word to translate to</param>
-    /// <returns>fixed array of divisors</returns>
     public void AddWord(string fromWord, string toWord)
     {
-        // ADD YOUR CODE HERE
+        _words[fromWord] = toWord;
     }
 
     /// <summary>
@@ -34,7 +46,13 @@ public class Translator
     /// <returns>The translated word or "???" if no translation is available</returns>
     public string Translate(string fromWord)
     {
-        // ADD YOUR CODE HERE
-        return "";
+        if (_words.ContainsKey(fromWord))
+        {
+            return _words[fromWord];
+        }
+        else
+        {
+            return "???";
+        }
     }
 }
