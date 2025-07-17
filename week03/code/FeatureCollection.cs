@@ -1,5 +1,2 @@
-public class FeatureCollection
-{
-    // TODO Problem 5 - ADD YOUR CODE HERE
-    // Create additional classes as necessary
-}
+// Intentionally left blank to resolve build issue.
+// See SetsAndMaps.cs for the class definitions.
