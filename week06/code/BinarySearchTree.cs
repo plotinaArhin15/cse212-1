@@ -66,7 +66,7 @@ public class BinarySearchTree : IEnumerable<int>
     }
 
     /// <summary>
-    /// Iterate backward through the BST.
+    /// Iterate backward through the BST (your original method).
     /// </summary>
     public IEnumerable Reverse()
     {
@@ -80,7 +80,27 @@ public class BinarySearchTree : IEnumerable<int>
 
     private void TraverseBackward(Node? node, List<int> values)
     {
-        // TODO Problem 3
+        if (node is not null)
+        {
+            // Traverse right subtree first (larger values)
+            TraverseBackward(node.Right, values);
+            // Add current node's data
+            values.Add(node.Data);
+            // Traverse left subtree last (smaller values)
+            TraverseBackward(node.Left, values);
+        }
+    }
+
+    /// <summary>
+    /// A generic Reversed() method that returns IEnumerable<int> so you can do:
+    /// foreach(var value in myTree.Reversed()) { ... }
+    /// </summary>
+    public IEnumerable<int> Reversed()
+    {
+        var numbers = new List<int>();
+        TraverseBackward(_root, numbers);
+        foreach (var number in numbers)
+            yield return number;
     }
 
     /// <summary>
@@ -99,8 +119,10 @@ public class BinarySearchTree : IEnumerable<int>
     }
 }
 
-public static class IntArrayExtensionMethods {
-    public static string AsString(this IEnumerable array) {
+public static class IntArrayExtensionMethods
+{
+    public static string AsString(this IEnumerable array)
+    {
         return "<IEnumerable>{" + string.Join(", ", array.Cast<int>()) + "}";
     }
 }
